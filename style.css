@@ -1,15 +1,15 @@
 /* CSS Reset & Variables */
 :root {
-    --color-bg-dark: #0f1714;
-    --color-bg-light: #18251f;
-    --color-primary-agave: #3b5a4b; /* Agave Green */
-    --color-primary-light: #5d826f;
-    --color-accent-gold: #cfaa66;
-    --color-accent-copper: #b87333;
-    --text-main: #f4f6f5;
-    --text-muted: #aab5af;
-    --glass-bg: rgba(24, 37, 31, 0.4);
-    --glass-border: rgba(207, 170, 102, 0.15);
+    --color-bg-dark: #141113; /* Very dark plum/charcoal */
+    --color-bg-light: #1c1518; /* Dark plum grey */
+    --color-primary-agave: #8b3a58; /* Elegant Muted Rose/Plum */
+    --color-primary-light: #b05c7a; /* Lighter Rose */
+    --color-accent-gold: #e2bb82; /* Soft Gold */
+    --color-accent-copper: #e5a494; /* Rose Gold */
+    --text-main: #f9f6f7;
+    --text-muted: #b8acb1;
+    --glass-bg: rgba(28, 21, 24, 0.5);
+    --glass-border: rgba(226, 187, 130, 0.15);
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -163,7 +163,7 @@ a {
 }
 
 .navbar.scrolled {
-    background: rgba(15, 23, 20, 0.9);
+    background: rgba(20, 17, 19, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 5%;
     border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -189,7 +189,7 @@ a {
 .hero-bg-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 10%, rgba(59, 90, 75, 0.4) 0%, rgba(15, 23, 20, 1) 60%);
+    background: radial-gradient(circle at 50% 10%, rgba(139, 58, 88, 0.35) 0%, rgba(20, 17, 19, 1) 60%);
     z-index: 0;
 }
 
@@ -197,15 +197,15 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(207, 170, 102, 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(226, 187, 130, 0.12) 1px, transparent 1px);
     background-size: 30px 30px;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 20, 0.9) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(20, 17, 19, 0.95) 100%);
     z-index: 1;
 }
 
@@ -300,21 +300,21 @@ a {
 
 .topic-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(207, 170, 102, 0.5);
-    background: rgba(24, 37, 31, 0.7);
+    border-color: rgba(226, 187, 130, 0.4);
+    background: rgba(28, 21, 24, 0.8);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .topic-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(59, 90, 75, 0.4), rgba(207, 170, 102, 0.1));
+    background: linear-gradient(135deg, rgba(139, 58, 88, 0.4), rgba(226, 187, 130, 0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(59, 90, 75, 0.8);
+    border: 1px solid rgba(139, 58, 88, 0.6);
 }
 
 .topic-icon i {
