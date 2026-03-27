@@ -267,7 +267,7 @@ a {
     color: #fff;
 }
 
-/* About Section & Instructor Section */
+/* About Section */
 .about-grid, .instructor-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -275,9 +275,33 @@ a {
     align-items: center;
 }
 
+/* Instructor: photo + text side by side */
+.instructor-inner {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.instructor-photo {
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.pau-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    min-height: 360px;
+}
+
 .about-text p, .instructor-text p {
     margin-bottom: 1.5rem;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
 }
 
@@ -534,6 +558,17 @@ a {
     /* About / Instructor text */
     .about-text p, .instructor-text p {
         font-size: 1rem;
+    }
+
+    /* Instructor section: stack photo on top */
+    .instructor-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .pau-photo {
+        min-height: 260px;
+        max-height: 320px;
+        object-position: center 20%;
     }
 
     /* Quienes Somos logo */
