@@ -65,10 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Optional: You can collect the data here before redirecting
             
-            // Redirect to Stripe checkout
-            window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+            const submitBtn = registerForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Mostrar estado de carga visual
+            submitBtn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Procesando...";
+            submitBtn.disabled = true;
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzE_kKYikgfcUETyB86Gb6ujyMaJ8YnPRYEoklCIwIPxeSG_7IyeObuICDVhjbz8Hqgpg/exec';
+            const formData = new FormData(registerForm);
+
+            // Enviar datos en segundo plano a Google Sheets
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    // Éxito: limpiar y enviar a Stripe
+                    registerForm.reset();
+                    window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+                })
+                .catch(error => {
+                    console.error('Error al guardar en Sheets:', error.message);
+                    // Como el pago es prioridad, redirigir igualmente
+                    window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+                })
+                .finally(() => {
+                    // Restaurar botón (por si falla la redirección)
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
