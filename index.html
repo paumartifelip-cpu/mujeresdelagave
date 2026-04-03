@@ -24,7 +24,7 @@
         </button>
         <div class="nav-links" id="nav-links">
             <a href="#quienes-somos" class="nav-link">Quienes Somos</a>
-            <a href="#contacto" class="btn btn-outline">Contacto</a>
+            <a href="#" class="btn btn-outline open-modal-btn">Registro</a>
         </div>
     </nav>
 
@@ -63,6 +63,7 @@
 
             <div class="hero-actions fade-in-up delay-4">
                 <a href="#temario" class="btn btn-primary">Ver Temario</a>
+                <a href="#" class="btn btn-outline open-modal-btn" style="margin-left: 1rem;">Registrarse</a>
             </div>
         </div>
     </header>
@@ -89,8 +90,15 @@
             </div>
 
             <div class="topics-grid">
-                <!-- ChatGPT -->
+                <!-- Modelos LLM -->
                 <div class="topic-card glass-effect reveal-up delay-1">
+                    <div class="topic-icon"><i class='bx bx-brain'></i></div>
+                    <h3>Inteligencia Artificial y LLMs</h3>
+                    <p>Visión general de la Inteligencia Artificial y los modelos más potentes: <strong>ChatGPT, Gemini y Claude</strong>. Descubre por qué son clave para ti.</p>
+                </div>
+
+                <!-- ChatGPT -->
+                <div class="topic-card glass-effect reveal-up delay-2">
                     <div class="topic-icon"><i class='bx bx-bot'></i></div>
                     <h3>ChatGPT para Empresarias</h3>
                     <p>Automatización de tareas, redacción persuasiva corporativa y optimización de tu tiempo con asistentes 24/7.</p>
@@ -189,16 +197,64 @@
         </div>
     </section>
 
-    <!-- Contact / WhatsApp Section -->
+    <!-- Registration Section -->
     <section class="cta section" id="contacto">
         <div class="container text-center reveal-up">
-            <h2 class="section-title">Únete a la Evolución</h3>
-            <p style="margin-bottom: 2rem; color: var(--text-muted);">Si eres parte de <strong>Mujeres del Agave</strong> o una empresaria interesada en elevar tu carrera al siguiente nivel tecnológico, contáctanos sin compromiso.</p>
-            <a href="https://wa.me/525539554713" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center; background: #25D366; color: white;">
-                <i class='bx bxl-whatsapp' style="font-size: 1.5rem;"></i> Escríbenos por WhatsApp
+            <h2 class="section-title">Únete a la Evolución</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">Asegura tu lugar en este exclusivo programa y lleva tu carrera al siguiente nivel tecnológico.</p>
+            <a href="#" class="btn btn-primary open-modal-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                <i class='bx bx-calendar-check' style="font-size: 1.5rem;"></i> Registro Obligatorio (Avanzar al Pago)
             </a>
         </div>
     </section>
+
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-modal">&times;</span>
+            <h2 class="section-title text-center" style="font-size: 2rem; margin-bottom: 0.5rem;">Registro</h2>
+            <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem;">Completa tus datos para proceder al pago</p>
+            
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" class="input-glass" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail">Mail:</label>
+                    <input type="email" id="mail" name="mail" class="input-glass" required>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">Whatsapp:</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" class="input-glass" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Nombre de la empresa (Qué hacen):</label>
+                    <input type="text" id="empresa" name="empresa" class="input-glass" required>
+                </div>
+                <div class="form-group">
+                    <label>Horarios disponibles (A elegir):</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="horario" value="opcion1" required>
+                            <span><strong>Opción 1:</strong> Martes 21/4, Miércoles 22/4 y Jueves 23/4 de 10 am a 12 pm</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="horario" value="opcion2">
+                            <span><strong>Opción 2:</strong> Martes 21/4, Miércoles 22/4 y Jueves 23/4 de 18 pm a 20 pm</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="pricing-info text-center">
+                    <p style="text-decoration: line-through; color: var(--text-muted); font-size: 0.9rem;">Precio regular empresa de 10 trabajadores $ 25,000 MXN</p>
+                    <p style="color: var(--color-accent-gold); font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Precio especial Mujeres Empresarias del Agave $ 1,000 MXN</p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class='bx bx-credit-card'></i> Pagar con Tarjeta o Transferencia</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

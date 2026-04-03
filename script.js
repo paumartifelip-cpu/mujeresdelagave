@@ -37,6 +37,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Modal and Form logic
+    const modal = document.getElementById('register-modal');
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+    const closeBtn = document.querySelector('.close-modal');
+    const registerForm = document.getElementById('register-form');
+
+    if (modal && closeBtn) {
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('show');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    }
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Optional: You can collect the data here before redirecting
+            
+            // Redirect to Stripe checkout
+            window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+        });
+    }
+
     // Reveal animations on scroll
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
