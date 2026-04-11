@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => {
                     // Éxito: limpiar y enviar a Stripe
                     registerForm.reset();
-                    window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+                    window.location.href = 'https://buy.stripe.com/7sY8wRgzQ8n3edu7xz5Ne0j';
                 })
                 .catch(error => {
                     console.error('Error al guardar en Sheets:', error.message);
                     // Como el pago es prioridad, redirigir igualmente
-                    window.location.href = 'https://buy.stripe.com/3cIeVf6ZgdHn0mE4ln5Ne0i';
+                    window.location.href = 'https://buy.stripe.com/7sY8wRgzQ8n3edu7xz5Ne0j';
                 })
                 .finally(() => {
                     // Restaurar botón (por si falla la redirección)
